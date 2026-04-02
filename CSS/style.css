@@ -1,0 +1,648 @@
+:root {
+    --mainColor: #8B1A1A;
+    --navyColor: #1B2D50;
+    --secondryColor: #FFFFFF;
+    --iconBG: #f5dede;
+    --textColor: #f0f1f4;
+    --headerColor: #111111;
+    --paragraphColor: rgb(90, 90, 90);
+    --lightBg: #f4f6fa;
+
+    --radius-card: 12px;
+    --radius-button: 6px;
+    --radius-input: 8px;
+
+    --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 10px 30px rgba(27, 45, 80, 0.18);
+    --shadow-lg: 0 18px 50px rgba(0, 0, 0, 0.35);
+
+    --section-padding-desktop: 90px;
+    --section-padding-mobile: 60px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+#heroContainer {
+    background: linear-gradient(120deg, #1B2D50 0%, #0d1e3a 55%, #3a0a0a 100%);
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    padding: var(--section-padding-desktop) 10%;
+    align-items: center;
+    overflow: hidden;
+}
+
+#heroContainer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(135deg, rgba(255,255,255,0.04) 0, rgba(255,255,255,0.02) 40%, transparent 60%),
+        repeating-linear-gradient(135deg, rgba(255,255,255,0.02) 0, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 6px);
+    mix-blend-mode: soft-light;
+    pointer-events: none;
+}
+
+#heroContainer > * {
+    position: relative;
+    z-index: 1;
+}
+
+.subHero {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.subHero h2.typewriter {
+    color: white;
+    font-size: 60px;
+    font-weight: 800;
+    text-align: left;
+    margin-bottom: 20px;
+    line-height: 1.15;
+}
+
+#heroContainer p {
+    color: var(--textColor);
+    font-size: 18px;
+    margin-bottom: 36px;
+    line-height: 1.7;
+    max-width: 520px;
+}
+
+#BtnContainer {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-link {
+    text-decoration: none;
+}
+
+#Btn2 {
+    font-size: 19px;
+    padding: 18px 38px;
+    background-color: var(--mainColor);
+    color: white;
+    border: 2px solid transparent;
+    border-radius: var(--radius-button);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 18px rgba(139, 26, 26, 0.5);
+    letter-spacing: 0.3px;
+}
+
+#Btn2:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(139, 26, 26, 0.6);
+    background-color: #a52020;
+}
+
+#imgHero {
+    /* Hero background image (uses existing hero.jpeg file) */
+    background-image: url("../Images/hero.jpeg");
+    background-size: cover;
+    background-position: center;
+    flex: 1;
+    height: 440px;
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-lg);
+    margin-left: 6%;
+}
+
+/* ============================================
+   CONTACT STRIP
+   ============================================ */
+#contactStrip {
+    background-color: var(--navyColor);
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.contact-strip-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 28px 50px;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+a.contact-strip-item:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+}
+
+.contact-strip-divider {
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 16px 0;
+}
+
+.contact-strip-icon {
+    width: 52px;
+    height: 52px;
+    background-color: var(--mainColor);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.contact-strip-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.contact-strip-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.65);
+    font-weight: 600;
+}
+
+.contact-strip-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 0.3px;
+}
+
+/* ============================================
+   SERVICES SECTION
+   ============================================ */
+#services {
+    padding: var(--section-padding-desktop) 0 40px;
+}
+
+#textContainer {
+    text-align: center;
+    padding: 0 10% 24px;
+}
+
+#textContainer h4 {
+    font-size: 40px;
+    color: var(--navyColor);
+    margin-bottom: 14px;
+    font-weight: 700;
+}
+
+#textContainer p {
+    font-size: 18px;
+    color: var(--paragraphColor);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+#insuranceGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    padding: 36px 10% 60px;
+}
+
+.box1 {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e2e6ee;
+    border-top: 4px solid var(--navyColor);
+    padding: 28px 24px;
+    border-radius: var(--radius-card);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+    background-color: #fff;
+}
+
+.box1:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 30px rgba(27, 45, 80, 0.12);
+    border-top-color: var(--mainColor);
+}
+
+.icon1 {
+    width: 56px;
+    height: 56px;
+    background-color: var(--iconBG);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    color: var(--mainColor);
+    font-size: 20px;
+}
+
+.box1 h5 {
+    font-size: 18px;
+    color: var(--navyColor);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.box1 p {
+    color: var(--paragraphColor);
+    line-height: 1.65;
+    font-size: 14px;
+}
+
+/* ============================================
+   CTA BANNER
+   ============================================ */
+#cta {
+    background: linear-gradient(120deg, #1B2D50 0%, #0d1e3a 100%);
+    padding: var(--section-padding-desktop) 10%;
+    text-align: center;
+    color: white;
+}
+
+#cta h5 {
+    font-size: 44px;
+    margin-bottom: 18px;
+    font-weight: 700;
+}
+
+#cta > p {
+    font-size: 19px;
+    margin-bottom: 40px;
+    opacity: 0.88;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+}
+
+#BTNC {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 14px 28px;
+    font-size: 17px;
+    border-radius: var(--radius-button);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+#btn3 {
+    background-color: var(--mainColor);
+    color: white;
+    font-size: 19px;
+    padding: 16px 36px;
+    box-shadow: 0 4px 16px rgba(139, 26, 26, 0.45);
+}
+
+#btn3:hover {
+    background-color: #a52020;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(139, 26, 26, 0.55);
+}
+
+#btn4 {
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+    font-size: 19px;
+    padding: 16px 36px;
+}
+
+#btn4:hover {
+    background-color: white;
+    color: var(--navyColor);
+}
+
+/* ============================================
+   ABOUT US SECTION
+   ============================================ */
+#about {
+    background-color: var(--lightBg);
+    padding: var(--section-padding-desktop) 10%;
+}
+
+#aboutContent {
+    display: flex;
+    gap: 64px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-label {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--mainColor);
+    margin-bottom: 12px;
+    border-left: 3px solid var(--mainColor);
+    padding-left: 10px;
+}
+
+#aboutText {
+    flex: 1;
+}
+
+#aboutText h4 {
+    font-size: 40px;
+    color: var(--navyColor);
+    margin-bottom: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+#aboutText p {
+    color: var(--paragraphColor);
+    font-size: 15.5px;
+    line-height: 1.85;
+    margin-bottom: 16px;
+}
+
+#aboutImageWrap {
+    flex: 0 0 380px;
+    height: 420px;
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    box-shadow: 0 10px 32px rgba(27, 45, 80, 0.16);
+}
+
+#officeImagePlaceholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #dce3f0, #c8d2e8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    color: var(--navyColor);
+}
+
+#officeImagePlaceholder p {
+    font-size: 14px;
+    color: #5a6a88;
+    margin: 0;
+}
+
+#aboutImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ============================================
+   LOCATION SECTION
+   ============================================ */
+#location {
+    padding: var(--section-padding-desktop) 10%;
+    background-color: white;
+}
+
+#locationInner {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#locationText {
+    flex: 1;
+}
+
+#locationText h4 {
+    font-size: 40px;
+    color: var(--navyColor);
+    margin-bottom: 18px;
+    font-weight: 700;
+}
+
+p.location-intro {
+    font-size: 16px;
+    color: var(--paragraphColor);
+    line-height: 1.75;
+    margin-bottom: 22px;
+}
+
+.location-address {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--lightBg);
+    border-left: 4px solid var(--navyColor);
+    padding: 14px 18px;
+    border-radius: 6px;
+    font-size: 15px;
+    color: var(--headerColor);
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.location-address i {
+    color: var(--mainColor);
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.parking-info {
+    background-color: var(--lightBg);
+    border-radius: 10px;
+    padding: 24px 26px;
+    border-top: 4px solid var(--navyColor);
+}
+
+.parking-info h6 {
+    color: var(--navyColor);
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+.parking-info h6 i {
+    color: var(--mainColor);
+}
+
+.parking-info p {
+    font-size: 14.5px;
+    color: var(--paragraphColor);
+    line-height: 1.75;
+    margin-bottom: 12px;
+}
+
+.parking-info p:last-child {
+    margin-bottom: 0;
+}
+
+#locationMap {
+    flex: 0 0 440px;
+    height: 480px;
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    box-shadow: 0 8px 28px rgba(27, 45, 80, 0.14);
+    border: 2px solid #dce3f0;
+}
+
+#locationMap iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+/* ============================================
+   SHARED / UTILITY
+   ============================================ */
+hr {
+    border: none;
+    border-top: 1px solid #e0e6ef;
+    margin: 0 10%;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1200px) {
+    #insuranceGrid {
+        grid-template-columns: repeat(4, 1fr);
+        padding: 36px 5% 60px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .subHero h2.typewriter { font-size: 44px; }
+    #textContainer h4 { font-size: 32px; }
+    #insuranceGrid { grid-template-columns: repeat(2, 1fr); }
+
+    #aboutContent, #locationInner {
+        flex-direction: column;
+        gap: 36px;
+    }
+
+    #aboutImageWrap {
+        flex: none;
+        width: 100%;
+        height: 260px;
+    }
+
+    #locationMap {
+        flex: none;
+        width: 100%;
+        height: 320px;
+    }
+
+    .contact-strip-item {
+        padding: 22px 30px;
+    }
+
+    .contact-strip-value {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 768px) {
+    #heroContainer {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 5%;
+        min-height: auto;
+    }
+
+    .subHero { width: 100%; }
+
+    .subHero h2.typewriter {
+        font-size: 34px;
+        text-align: center;
+    }
+
+    #heroContainer p { font-size: 16px; }
+
+    #BtnContainer { justify-content: center; }
+
+    #imgHero { display: none; }
+
+    #contactStrip {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .contact-strip-item {
+        padding: 18px 24px;
+        justify-content: center;
+    }
+
+    .contact-strip-divider {
+        width: auto;
+        height: 1px;
+        margin: 0 24px;
+    }
+
+    #textContainer { padding: 50px 5% 16px; }
+    #textContainer h4 { font-size: 26px; }
+
+    #insuranceGrid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 24px 5% 40px;
+        gap: 16px;
+    }
+
+    #about, #location { padding: 60px 5%; }
+    #aboutText h4, #locationText h4 { font-size: 28px; }
+
+    #cta { padding: 60px 5%; }
+    #cta h5 { font-size: 28px; }
+
+    #BTNC {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #btn3, #btn4 {
+        width: 100%;
+        max-width: 320px;
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 480px) {
+    #insuranceGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-strip-value { font-size: 16px; }
+}

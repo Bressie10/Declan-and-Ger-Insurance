@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+
+    <meta name="description" content="{{ description | default: 'Independent Irish insurance brokers offering car, home, commercial, farm and liability cover with straightforward advice and personal service from our Ennis office.' }}">
+    <meta name="robots" content="index,follow">
+    {% assign siteUrl = metadata.siteUrl | default: 'https://www.gdd.ie' %}
+    {% assign pageUrl = page.url | default: '/' %}
+    {% assign canonicalUrl = siteUrl | append: pageUrl %}
+    <link rel="canonical" href="{{ canonicalUrl }}">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:description" content="{{ description | default: 'Independent Irish insurance brokers offering car, home, commercial, farm and liability cover with straightforward advice and personal service from our Ennis office.' }}">
+    <meta property="og:url" content="{{ canonicalUrl }}">
+    <meta property="og:site_name" content="GDD Insurance">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ title }}">
+    <meta name="twitter:description" content="{{ description | default: 'Independent Irish insurance brokers offering car, home, commercial, farm and liability cover with straightforward advice and personal service from our Ennis office.' }}">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Gerard & Declan Daly Insurance & Investment Brokers",
+      "alternateName": "GDD Insurance",
+      "url": "{{ siteUrl }}",
+      "telephone": "+353-65-6828489",
+      "email": "info@gdd.ie",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "67 O'Connell Street",
+        "addressLocality": "Ennis",
+        "addressRegion": "Co. Clare",
+        "postalCode": "V95 TW96",
+        "addressCountry": "IE"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "17:30"
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="../CSS/header_style.css">
+
+    {% if page_css %}
+    <link rel="stylesheet" href="{{ page_css }}">
+    {% endif %}
+
+    {% if page_js %}
+    <script src="{{ page_js }}" defer></script>
+    {% endif %}
+
+</head>
+<body>
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" style="display:none;">
+        <p>We use cookies to improve your experience on our website. By continuing to browse, you agree to our use of cookies.</p>
+        <div class="cookie-buttons">
+            <button id="cookie-accept">Accept</button>
+            <button id="cookie-decline">Decline</button>
+        </div>
+    </div>
+
+    <header>
+        <div class="container">
+            <a href="/" class="logo">
+                <img src="/Images/logo.png" alt="GDD Insurance logo" loading="lazy" onerror="this.style.display='none'; if(this.nextElementSibling){ this.nextElementSibling.style.display='block'; }">
+                <span class="logo-fallback">GDD Insurance</span>
+            </a>
+
+            <input type="checkbox" id="nav-check">
+
+            <label for="nav-check" class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <div class="header-contact">
+                <div class="header-contact-item">
+                    <span class="header-contact-label">Call</span>
+                    <a href="tel:0656828489" class="header-contact-value">065-6828489</a>
+                </div>
+                <div class="header-contact-item">
+                    <span class="header-contact-label">Email</span>
+                    <a href="mailto:info@gdd.ie" class="header-contact-value">info@gdd.ie</a>
+                </div>
+            </div>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/#services">Services</a></li>
+                    <li><a href="/#about">About Us</a></li>
+                    <li><a href="/#location">Location</a></li>
+                    <li><a href="/quote/" id="quoteNavBtn">Request a Call Back</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        {{ content }}
+    </main>
+
+    <footer>
+        <div id="footer1">
+            <div class="box" id="box67">
+                <h6>GDD Insurance</h6>
+                <p>Protecting what matters most. We're committed to providing comprehensive insurance coverage with exceptional customer service.</p>
+                <ul>
+                    <li><a href="tel:0656828489">065-6828489</a></li>
+                    <li><a href="mailto:info@gdd.ie">info@gdd.ie</a></li>
+                    <li>67 O'Connell Street, Ennis, Co. Clare.</li>
+                </ul>
+            </div>
+            <div class="box" id="box68">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2409.8910903862766!2d-8.98613442312922!3d52.84234747214743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b6d2ccc134f45%3A0xe7a00f4142ce4caa!2sGerard%20%26%20Declan%20Daly%20Insurances%20%26%20Investment%20Brokers!5e0!3m2!1sen!2sie!4v1769702349449!5m2!1sen!2sie" width="600" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="GDD Insurance office location map"></iframe>
+            </div>
+            <div class="box" id="box69">
+                <h6>Follow Us</h6>
+                <ul>
+                    <li><a href=""><i class="fa-brands fa-facebook fa-2xl" style="color: #8B1A1A;"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-tiktok fa-2xl" style="color: #8B1A1A;"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-instagram fa-2xl" style="color: #8B1A1A;"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <hr>
+
+        <div id="regulatoryText">
+            Daly Insurances &amp; Mortgages Ltd t/a Gerard &amp; Declan Daly Insurance &amp; Investment Brokers is regulated by the Central Bank of Ireland.
+        </div>
+
+        <div id="subFooter">© 2026 Gerard and Declan Insurance. All rights reserved.</div>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="/#"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                // Only apply on the homepage
+                if (window.location.pathname == '/' || window.location.pathname == '/index.html') {
+                    e.preventDefault();
+                    const targetId = href.replace('/#', '');
+                    const target = document.getElementById(targetId);
+                    if (target) {
+                        // Close mobile nav if open
+                        document.getElementById('nav-check').checked = false;
+                        setTimeout(() => {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }, 100);
+                    }
+                }
+            });
+        });
+
+        // Sticky header on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Cookie consent
+        (function() {
+            const banner = document.getElementById('cookie-banner');
+            const acceptBtn = document.getElementById('cookie-accept');
+            const declineBtn = document.getElementById('cookie-decline');
+
+            if (!localStorage.getItem('cookieConsent')) {
+                setTimeout(function() {
+                    if (banner) banner.style.display = 'flex';
+                }, 900);
+            }
+
+            if (acceptBtn) {
+                acceptBtn.addEventListener('click', function() {
+                    localStorage.setItem('cookieConsent', 'accepted');
+                    banner.style.display = 'none';
+                });
+            }
+
+            if (declineBtn) {
+                declineBtn.addEventListener('click', function() {
+                    localStorage.setItem('cookieConsent', 'declined');
+                    banner.style.display = 'none';
+                });
+            }
+        })();
+    </script>
+    <script src="../JS/Quote.js" defer></script>
+    <script src="https://kit.fontawesome.com/7af9aca289.js" crossorigin="anonymous"></script>
+</body>
+</html>
