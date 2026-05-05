@@ -8,7 +8,8 @@ page_css: /CSS/style.css
     <div id="heroContainer">
         <div class="subHero">
             <h2 class="typewriter">Protecting What Matters The Most</h2>
-            <p>Comprehensive insurance solutions for your car, home, health, and family. Get the peace of mind you deserve with coverage you can trust.</p>
+            <p>Comprehensive insurance solutions for your car, home and business. Get the peace of mind you deserve with coverage you can trust.</p>
+            <p class="hero-hours">Mon–Fri: 9am – 5pm</p>
             <div id="BtnContainer">
                 <a href="/quote/" class="btn-link"><button id="Btn2">Request a Call Back</button></a>
             </div>
@@ -44,7 +45,7 @@ page_css: /CSS/style.css
             </div>
             <div class="contact-strip-text">
                 <span class="contact-strip-label">Office Hours</span>
-                <span class="contact-strip-value">Mon–Fri: 9am – 5:30pm</span>
+                <span class="contact-strip-value">Mon–Fri: 9am – 5pm</span>
             </div>
         </div>
     </div>
@@ -57,45 +58,60 @@ page_css: /CSS/style.css
         </div>
 
         <div id="insuranceGrid">
-            <div class="box1">
-                <div class="icon1"><i class="fa-solid fa-car fa-xl"></i></div>
+            <div class="box1" data-image="/Images/insurance/car.jpg" data-icon="fa-car" data-title="Car Insurance" data-desc="Comprehensive coverage for your vehicle with competitive rates and 24/7 roadside assistance. We compare policies across leading Irish insurers to find the right cover for you.">
+                <div class="card-img-wrap"><img src="/Images/insurance/car.jpg" alt="Car Insurance"></div>
                 <h5>Car Insurance</h5>
                 <p>Comprehensive coverage for your vehicle with competitive rates and 24/7 roadside assistance.</p>
             </div>
-            <div class="box1">
-                <div class="icon1"><i class="fa-solid fa-truck-moving fa-xl"></i></div>
+            <div class="box1" data-image="/Images/insurance/van.jpg" data-icon="fa-truck-moving" data-title="Van Insurance" data-desc="Comprehensive cover for work or personal vans, with competitive rates and reliable support to keep you on the road. Suitable for tradespeople, couriers and family vans.">
+                <div class="card-img-wrap"><img src="/Images/insurance/van.jpg" alt="Van Insurance"></div>
                 <h5>Van Insurance</h5>
                 <p>Comprehensive cover for work or personal vans, with competitive rates and reliable support to keep you on the road.</p>
             </div>
-            <div class="box1">
-                <div class="icon1"><i class="fa-solid fa-house fa-xl"></i></div>
+            <div class="box1" data-image="/Images/insurance/home.jpg" data-icon="fa-house" data-title="Home Insurance" data-desc="Protect your home and belongings from unexpected events with our flexible coverage options. We cover buildings, contents, and everything in between.">
+                <div class="card-img-wrap"><img src="/Images/insurance/home.jpg" alt="Home Insurance"></div>
                 <h5>Home Insurance</h5>
                 <p>Protect your home and belongings from unexpected events with our flexible coverage options.</p>
             </div>
-            <div class="box1">
-                <div class="icon1"><i class="fa-solid fa-building fa-xl"></i></div>
+            <div class="box1" data-image="/Images/insurance/property.jpg" data-icon="fa-building" data-title="Property Insurance" data-desc="Safeguard your rental and investment properties with tailored coverage solutions. Whether you own one property or a portfolio, we have the right policy for you.">
+                <div class="card-img-wrap"><img src="/Images/insurance/property.jpg" alt="Property Insurance"></div>
                 <h5>Property Insurance</h5>
                 <p>Safeguard your rental and investment properties with tailored coverage solutions.</p>
             </div>
-            <div class="box1">
-                <div class="icon1"><i class="fa-solid fa-briefcase fa-xl"></i></div>
+            <div class="box1" data-image="/Images/insurance/commercial.jpg" data-icon="fa-briefcase" data-title="Commercial Insurance" data-desc="Business protection plans designed to keep your company secure and thriving. From public liability to employer's liability and beyond, we cover all your business risks.">
+                <div class="card-img-wrap"><img src="/Images/insurance/commercial.jpg" alt="Commercial Insurance"></div>
                 <h5>Commercial Insurance</h5>
                 <p>Business protection plans designed to keep your company secure and thriving.</p>
             </div>
-            <div class="box1">
-                <div class="icon1"><i class="fa-solid fa-scale-balanced fa-xl"></i></div>
+            <div class="box1" data-image="/Images/insurance/liability.jpg" data-icon="fa-scale-balanced" data-title="Liability Insurance" data-desc="Protect yourself from lawsuits and claims with comprehensive liability coverage. We offer public, employer's and professional indemnity policies tailored to your needs.">
+                <div class="card-img-wrap"><img src="/Images/insurance/liability.jpg" alt="Liability Insurance"></div>
                 <h5>Liability Insurance</h5>
                 <p>Protect yourself from lawsuits and claims with comprehensive liability coverage.</p>
             </div>
-            <div class="box1">
-                <div class="icon1"><i class="fa-solid fa-suitcase fa-xl"></i></div>
+            <div class="box1" data-image="/Images/insurance/travel.jpg" data-icon="fa-suitcase" data-title="Travel Insurance" data-desc="Travel with confidence thanks to flexible cover for medical emergencies, cancellations, lost luggage and more. Single trip and annual multi-trip options available.">
+                <div class="card-img-wrap"><img src="/Images/insurance/travel.jpg" alt="Travel Insurance"></div>
                 <h5>Travel Insurance</h5>
                 <p>Travel with confidence thanks to flexible cover for medical emergencies, cancellations, lost luggage and more.</p>
             </div>
-            <div class="box1">
-                <div class="icon1"><i class="fa-solid fa-tractor fa-xl"></i></div>
+            <div class="box1" data-image="/Images/insurance/farm.jpg" data-icon="fa-tractor" data-title="Farm Insurance" data-desc="Protect your farm, livestock and machinery with tailored cover designed for the needs of Irish farmers. We understand the unique risks of farming life.">
+                <div class="card-img-wrap"><img src="/Images/insurance/farm.jpg" alt="Farm Insurance"></div>
                 <h5>Farm Insurance</h5>
                 <p>Protect your farm, livestock and machinery with tailored cover designed for the needs of Irish farmers.</p>
+            </div>
+        </div>
+
+        <!-- Insurance Modal -->
+        <div id="insuranceModal" aria-modal="true" role="dialog" aria-hidden="true">
+            <div id="insuranceModalBackdrop"></div>
+            <div id="insuranceModalContent">
+                <div id="insuranceModalImage"></div>
+                <div id="insuranceModalBody">
+                    <div id="insuranceModalIcon"><i class="fa-solid fa-car"></i></div>
+                    <h3 id="insuranceModalTitle"></h3>
+                    <p id="insuranceModalDesc"></p>
+                    <a href="/quote/" id="insuranceModalBtn">Request a Call Back</a>
+                </div>
+                <button id="insuranceModalClose" aria-label="Close">&times;</button>
             </div>
         </div>
     </section>
@@ -133,6 +149,52 @@ page_css: /CSS/style.css
             </div>
         </div>
     </section>
+
+    <!-- Insurance Modal -->
+    <script>
+        (function () {
+            const modal      = document.getElementById('insuranceModal');
+            const backdrop   = document.getElementById('insuranceModalBackdrop');
+            const closeBtn   = document.getElementById('insuranceModalClose');
+            const modalImage = document.getElementById('insuranceModalImage');
+            const modalIcon  = document.getElementById('insuranceModalIcon');
+            const modalTitle = document.getElementById('insuranceModalTitle');
+            const modalDesc  = document.getElementById('insuranceModalDesc');
+
+            function openModal(card) {
+                const img   = card.dataset.image  || '';
+                const icon  = card.dataset.icon   || 'fa-shield';
+                const title = card.dataset.title  || '';
+                const desc  = card.dataset.desc   || '';
+
+                modalImage.style.backgroundImage = img ? `url('${img}')` : 'none';
+                modalIcon.innerHTML  = `<i class="fa-solid ${icon}"></i>`;
+                modalTitle.textContent = title;
+                modalDesc.textContent  = desc;
+
+                modal.classList.add('open');
+                modal.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                modal.classList.remove('open');
+                modal.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+
+            document.querySelectorAll('.box1[data-title]').forEach(card => {
+                card.addEventListener('click', () => openModal(card));
+            });
+
+            backdrop.addEventListener('click', closeModal);
+            closeBtn.addEventListener('click', closeModal);
+
+            document.addEventListener('keydown', e => {
+                if (e.key === 'Escape') closeModal();
+            });
+        })();
+    </script>
 
     <!-- LOCATION -->
     <section id="location">

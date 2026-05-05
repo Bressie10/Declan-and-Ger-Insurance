@@ -1,0 +1,371 @@
+:root {
+    --mainColor: #8B1A1A;
+    --navyColor: #1B2D50;
+    --radius-card: 12px;
+    --radius-button: 6px;
+    --radius-input: 8px;
+    --shadow-md: 0 10px 30px rgba(27, 45, 80, 0.18);
+}
+
+/* ============================================
+   PAGE WRAPPER
+   ============================================ */
+.form-container {
+    min-height: calc(100vh - 80px);
+    background: linear-gradient(135deg, #f4f6fa 0%, #e8ecf5 100%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 48px 20px 60px;
+    position: relative;
+    transition: background-image 0.3s ease;
+}
+
+/* Dark overlay so card stays readable over background images */
+.form-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(15, 25, 50, 0.55);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.form-container > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Activate overlay when any card is selected */
+.form-container:has(.option-card.selected)::before {
+    opacity: 1;
+}
+
+/* Page background switches based on selected card */
+.form-container:has(.option-card[data-value="car"].selected)        { background-image: url('/Images/insurance/car.jpg'); }
+.form-container:has(.option-card[data-value="van"].selected)        { background-image: url('/Images/insurance/van.jpg'); }
+.form-container:has(.option-card[data-value="home"].selected)       { background-image: url('/Images/insurance/home.jpg'); }
+.form-container:has(.option-card[data-value="property"].selected)   { background-image: url('/Images/insurance/property.jpg'); }
+.form-container:has(.option-card[data-value="commercial"].selected) { background-image: url('/Images/insurance/commercial.jpg'); }
+.form-container:has(.option-card[data-value="liability"].selected)  { background-image: url('/Images/insurance/liability.jpg'); }
+.form-container:has(.option-card[data-value="travel"].selected)     { background-image: url('/Images/insurance/travel.jpg'); }
+.form-container:has(.option-card[data-value="farm"].selected)       { background-image: url('/Images/insurance/farm.jpg'); }
+
+/* ============================================
+   PROGRESS BAR
+   ============================================ */
+.progress-header {
+    width: 100%;
+    max-width: 760px;
+    margin-bottom: 28px;
+}
+
+.progress-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #5a6a88;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    transition: color 0.3s ease;
+}
+
+.form-container:has(.option-card.selected) .progress-labels {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.form-container:has(.option-card.selected) .footer-info {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 6px;
+    background-color: #d8dff0;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--navyColor), var(--mainColor));
+    border-radius: 999px;
+    transition: width 0.4s ease;
+}
+
+/* ============================================
+   CARD
+   ============================================ */
+.card {
+    width: 100%;
+    max-width: 760px;
+    background: #ffffff;
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-md);
+    padding: 44px 48px;
+}
+
+.card-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--navyColor);
+    margin-bottom: 8px;
+}
+
+.card-subtitle {
+    font-size: 15px;
+    color: #6a7a96;
+    margin-bottom: 32px;
+}
+
+/* ============================================
+   STEP VISIBILITY
+   ============================================ */
+.step-content {
+    display: none;
+}
+
+.step-content.active {
+    display: block;
+}
+
+/* ============================================
+   OPTION CARDS GRID
+   ============================================ */
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.option-card {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 24px 12px;
+    border: 2px solid #dce3f0;
+    border-radius: var(--radius-card);
+    background-color: #f8faff;
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.option-card:hover {
+    border-color: var(--navyColor);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(27, 45, 80, 0.12);
+}
+
+.option-card.selected {
+    border-color: var(--mainColor);
+    box-shadow: 0 0 0 3px rgba(139, 26, 26, 0.15);
+}
+
+.icon-wrapper {
+    width: 52px;
+    height: 52px;
+    background-color: #f5dede;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: var(--mainColor);
+    position: relative;
+    z-index: 1;
+    transition: background-color 0.2s ease;
+}
+
+.option-card.selected .icon-wrapper {
+    background-color: var(--mainColor);
+    color: white;
+}
+
+.option-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--navyColor);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Background image overlay — visible on .selected only */
+.option-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(255, 255, 255, 0.82);
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.option-card.selected::before {
+    opacity: 1;
+}
+
+.option-card[data-value="car"].selected      { background-image: url('/Images/insurance/car.jpg'); }
+.option-card[data-value="van"].selected      { background-image: url('/Images/insurance/van.jpg'); }
+.option-card[data-value="home"].selected     { background-image: url('/Images/insurance/home.jpg'); }
+.option-card[data-value="property"].selected { background-image: url('/Images/insurance/property.jpg'); }
+.option-card[data-value="commercial"].selected { background-image: url('/Images/insurance/commercial.jpg'); }
+.option-card[data-value="liability"].selected { background-image: url('/Images/insurance/liability.jpg'); }
+.option-card[data-value="travel"].selected   { background-image: url('/Images/insurance/travel.jpg'); }
+.option-card[data-value="farm"].selected     { background-image: url('/Images/insurance/farm.jpg'); }
+
+/* ============================================
+   FORM (STEP 2)
+   ============================================ */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--navyColor);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 12px 14px;
+    border: 1.5px solid #d0d8eb;
+    border-radius: var(--radius-input);
+    font-size: 15px;
+    font-family: inherit;
+    color: #1a1a2e;
+    background-color: #fafbff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--navyColor);
+    box-shadow: 0 0 0 3px rgba(27, 45, 80, 0.1);
+}
+
+/* ============================================
+   NAVIGATION FOOTER
+   ============================================ */
+.navigation-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 36px;
+    padding-top: 28px;
+    border-top: 1px solid #e8ecf5;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 28px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: var(--radius-button);
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border-color: #c8d0e4;
+    color: #5a6a88;
+}
+
+.btn-outline:hover {
+    border-color: var(--navyColor);
+    color: var(--navyColor);
+}
+
+.btn-primary {
+    background-color: var(--mainColor);
+    color: white;
+    box-shadow: 0 4px 14px rgba(139, 26, 26, 0.35);
+}
+
+.btn-primary:hover {
+    background-color: #a52020;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(139, 26, 26, 0.45);
+}
+
+/* ============================================
+   FOOTER NOTE
+   ============================================ */
+.footer-info {
+    margin-top: 20px;
+    font-size: 13px;
+    color: #8a96b0;
+    text-align: center;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    .card {
+        padding: 32px 24px;
+    }
+
+    .options-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.full-width {
+        grid-column: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .options-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .option-card {
+        padding: 18px 8px;
+    }
+
+    .card-title {
+        font-size: 22px;
+    }
+}

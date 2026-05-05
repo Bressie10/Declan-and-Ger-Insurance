@@ -78,18 +78,14 @@
     <header>
         <div class="container">
             <a href="/" class="logo">
-                <img src="/Images/logo.png" alt="GDD Insurance logo" loading="lazy" onerror="this.style.display='none'; if(this.nextElementSibling){ this.nextElementSibling.style.display='block'; }">
-                <span class="logo-fallback">GDD Insurance</span>
+                <img src="/Images/logo-gdd.jpeg" alt="GDD Insurance logo" loading="lazy">
+                <span class="logo-text">
+                    <span class="logo-name">GDD Insurance</span>
+                    <span class="logo-fullname">Ger &amp; Declan Daly Insurance</span>
+                </span>
             </a>
 
-            <input type="checkbox" id="nav-check">
-
-            <label for="nav-check" class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-
+            <!-- Desktop contact info (hidden on mobile) -->
             <div class="header-contact">
                 <div class="header-contact-item">
                     <span class="header-contact-label">Call</span>
@@ -101,7 +97,52 @@
                 </div>
             </div>
 
-            <nav>
+            <!-- Desktop nav (hidden on mobile) -->
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/#services">Services</a></li>
+                    <li><a href="/#about">About Us</a></li>
+                    <li><a href="/#location">Location</a></li>
+                    <li><a href="/quote/" id="quoteNavBtn">Request a Call Back</a></li>
+                </ul>
+            </nav>
+
+            <input type="checkbox" id="nav-check">
+
+            <!-- Backdrop — clicking closes the sidebar -->
+            <label for="nav-check" class="nav-backdrop"></label>
+
+            <label for="nav-check" class="menu-toggle" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <!-- Mobile sidebar nav -->
+            <nav class="mobile-nav">
+                <!-- Sidebar top branding -->
+                <div class="sidebar-top">
+                    <img src="/Images/logo-gdd.jpeg" alt="GDD Insurance logo" loading="lazy" class="sidebar-logo">
+                    <label for="nav-check" class="sidebar-close" aria-label="Close menu">&times;</label>
+                </div>
+
+                <!-- Contact info in sidebar -->
+                <div class="sidebar-contact">
+                    <a href="tel:0656828489" class="sidebar-contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>065-6828489</span>
+                    </a>
+                    <a href="mailto:info@gdd.ie" class="sidebar-contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>info@gdd.ie</span>
+                    </a>
+                    <div class="sidebar-contact-item">
+                        <i class="fa-solid fa-clock"></i>
+                        <span>Mon–Fri: 9am – 5pm</span>
+                    </div>
+                </div>
+
                 <ul class="nav-links">
                     <li><a href="/">Home</a></li>
                     <li><a href="/#services">Services</a></li>
@@ -143,11 +184,10 @@
 
         <hr>
 
-        <div id="regulatoryText">
-            Daly Insurances &amp; Mortgages Ltd t/a Gerard &amp; Declan Daly Insurance &amp; Investment Brokers is regulated by the Central Bank of Ireland.
+        <div id="subFooter">
+            © 2026 Gerard and Declan Insurance. All rights reserved.
+            <span class="regulatory-small">Daly Insurances &amp; Mortgages Ltd T/A Gerard &amp; Declan Daly Insurance &amp; Investment Brokers is regulated by the Central Bank of Ireland. Company registered in Ireland. No. 173537</span>
         </div>
-
-        <div id="subFooter">© 2026 Gerard and Declan Insurance. All rights reserved.</div>
     </footer>
 
     <script>
